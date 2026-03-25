@@ -1,0 +1,29 @@
+name: aerarium--res-publica
+display_name: "Aerarium Res Publica"
+description: "Treasury of the Public Thing — ORGANVM's institutional wing for fiscal sponsorship, entity formation, grant applications, and donor infrastructure"
+organ: META
+tier: flagship
+promotion_status: LOCAL
+language: markdown
+license: Apache-2.0
+
+produces:
+  - grant-applications
+  - entity-formation-docs
+  - institutional-strategy
+  - ip-policy
+
+consumes:
+  - organvm-corpvs-testamentvm.registry
+  - organvm-corpvs-testamentvm.governance-rules
+  - organvm-engine.metrics
+  - organvm-engine.omega
+
+events:
+  subscribes:
+    - system.session.close
+    - system.irf.update
+  publishes:
+    - institutional.application.submitted
+    - institutional.entity.formed
+    - institutional.funding.received
