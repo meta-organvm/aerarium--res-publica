@@ -3,3 +3,5 @@
 - [Three-persona review pattern](feedback_adversarial_review.md) — Validated adversarial review workflow for high-stakes documents
 - [License contradiction](project_license_contradiction.md) — META repos MIT vs IP policy Apache 2.0, IRF-INST-017
 - [Energy not time](feedback_energy_not_time.md) — Measure in tokens/energy/gates, not hours/days. Only external deadlines are time-bound.
+- [Funder fit gate](feedback_funder_fit_gate.md) — Run alignment check (funder funds vs current inventory) before any application drafting
+- [Creative Capital deferred](project_creative_capital_deferred.md) — CC 2027 paused, no art output yet; revisit when V2 generative layer exists
