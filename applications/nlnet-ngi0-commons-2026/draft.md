@@ -30,7 +30,7 @@ Cvrsvs Honorvm is an open-source Python library that provides three primitives f
 
 **3. Seed Contract System.** A declarative YAML contract format (`seed.yaml`) — similar in concept to Backstage's `catalog-info.yaml` but focused on governance rather than service cataloging — that each repository uses to declare its organizational membership, maturity tier, dependency edges, and event subscriptions. The engine discovers seed files across a workspace and constructs the full ecosystem graph from their declarations.
 
-The central R&D question is: **can formal governance be declaratively specified as a portable open standard that works across heterogeneous open-source ecosystems?** The funded work will answer this by extracting these primitives from a working 117-repository implementation, redesigning the interface layer for portability, publishing the seed contract format as an open specification, and demonstrating adoption on an independent ecosystem.
+The central R&D question is: **can formal governance be declaratively specified as a portable open standard that works across heterogeneous open-source ecosystems?** The funded work will answer this by extracting these primitives from a working 145-repository implementation, redesigning the interface layer for portability, publishing the seed contract format as an open specification, and demonstrating adoption on an independent ecosystem.
 
 **Expected outcomes:**
 
@@ -47,15 +47,15 @@ The central R&D question is: **can formal governance be declaratively specified 
   What has already been built? What's the track record?
 -->
 
-The governance primitives proposed for extraction already exist as production software. They have been developed since 2025 as part of the ORGANVM project — a multi-organ open-source ecosystem spanning 117 repositories across 8 GitHub organizations.
+The governance primitives proposed for extraction already exist as production software. They have been developed since 2025 as part of the ORGANVM project — a multi-organ open-source ecosystem spanning 145 repositories across 9 GitHub organizations.
 
-The engine currently manages the full lifecycle of these repositories: enforcing promotion state transitions, validating dependency flows across organizational boundaries, and maintaining a central registry with computed system metrics. The codebase consists of 314 Python source files (~73,000 lines) with a unified CLI exposing 23 command groups. The project has 4,700+ test functions across 213 test files, and a CI pipeline running on every push. Source code: [github.com/meta-organvm/organvm-engine](https://github.com/meta-organvm/organvm-engine).
+The engine currently manages the full lifecycle of these repositories: enforcing promotion state transitions, validating dependency flows across organizational boundaries, and maintaining a central registry with computed system metrics. The codebase consists of 376 Python source files (~87,000 lines) with a unified CLI exposing 44 command groups. The project has 5,200+ test functions across 247 test files, and a CI pipeline running on every push. Source code: [github.com/meta-organvm/organvm-engine](https://github.com/meta-organvm/organvm-engine).
 
 Concrete capabilities already implemented and in daily use:
 - A 6-state promotion state machine with data-driven transition rules, configurable infrastructure audit gates, and event emission on state change
 - A dependency graph validator with cycle detection (DFS with three-color marking) and back-edge enforcement across organizational tiers
-- A seed contract discovery system that traverses a workspace, parses declarative YAML contracts, and constructs a produces/consumes graph across 74 repositories
-- A JSON Schema suite (6 schemas) for registry, seed, governance-rules, dispatch-payload, soak-test, and system-metrics formats
+- A seed contract discovery system that traverses a workspace, parses declarative YAML contracts, and constructs a produces/consumes graph across 96 repositories
+- A JSON Schema suite (33 schemas) covering registry, seed, governance-rules, dispatch-payload, formation, ontologia-event, pulse-event, signal-signature, state-snapshot, and 24 additional domain-specific formats
 
 The applicant has built and maintained this system as a solo developer, demonstrating the governance model's feasibility at scale. The funded work is not building from scratch — it is redesigning the interface layer for portability, publishing the contract format as an open specification, and proving generalizability beyond its origin ecosystem.
 
@@ -103,7 +103,7 @@ The primary beneficiaries are **maintainers of multi-repository open-source proj
 
 The project will engage with relevant actors through concrete actions during the grant period: publishing the seed.yaml specification and soliciting feedback from the Backstage community (which has the catalog but lacks governance enforcement), the CNCF CLOMonitor maintainers (who score project maturity but do not enforce transitions), and the publiccode.yml community (which shares the goal of standardized software metadata for public benefit). Dissemination will include a published tutorial ("Add formal governance to your multi-repo project in 15 minutes"), a presentation at a European open-source event (FOSDEM Infrastructure devroom or an NLnet/NGI community meeting), and direct participation in relevant GitHub discussions.
 
-**Sustainability after the grant:** The governance engine's primary sustainability mechanism is dogfooding — the ORGANVM project depends on the engine in production for daily operations across 117 repositories, creating a strong incentive for ongoing maintenance independent of external funding. This is the same sustainability model that drives tools like Homebrew and rustfmt: maintained because their maintainers use them daily. The standalone package further reduces maintenance burden by decoupling from the parent project's release cycle.
+**Sustainability after the grant:** The governance engine's primary sustainability mechanism is dogfooding — the ORGANVM project depends on the engine in production for daily operations across 145 repositories, creating a strong incentive for ongoing maintenance independent of external funding. This is the same sustainability model that drives tools like Homebrew and rustfmt: maintained because their maintainers use them daily. The standalone package further reduces maintenance burden by decoupling from the parent project's release cycle.
 
 **European Dimension.** While the applicant is based in the United States, the governance engine directly serves European digital sovereignty objectives. The seed contract format is designed for interoperability with European-originated standards: publiccode.yml (the Italian/EU public administration software descriptor) and REUSE (the FSFE license compliance specification). All funded deliverables will be published as open-source software (Apache 2.0) and open specifications (CC-BY-4.0), contributing directly to the European digital commons. The applicant commits to presenting the work at a European open-source event during the grant period (travel budgeted in T11).
 
