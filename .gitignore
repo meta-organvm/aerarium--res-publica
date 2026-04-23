@@ -1,0 +1,20 @@
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+_site/
+_build/
+.jekyll-cache/
+.jekyll-metadata
+
+# Secrets
+.env
+.env.local
